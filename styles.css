@@ -1,47 +1,53 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* shared parallax style */
+.parallax {
+  height: 600px;
   background-image: url("https://media.geeksforgeeks.org/wp-content/uploads/20210402175040/back22.jpg");
-  min-height: 100vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  font-family: "Roboto", "sans";
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.intro,
-.projects,
-.achievements {
-  text-align: center;
-  background-color: #080808f7;
+.parallax h2 {
+  background: black;
   color: white;
-  padding: 40px 50px;
-  font-size: 1.2rem;
-}
-
-.name,
-.project-title,
-.achievement-title {
-  background-color: #080808f7;
-  color: white;
+  padding: 12px 25px;
   border-radius: 5px;
+  letter-spacing: 2px;
+}
+
+.content {
+  padding: 50px;
+  background: #111;
+  color: white;
   text-align: center;
-  margin: 290px auto;
-  font-size: 1.3rem;
-  font-weight: 1000;
-}
-.name,
-.project-title {
-  width: 130px;
-  padding: 15px;
 }
 
-.achievement-title {
-  width: 200px;
-  padding: 15px;
+.content p {
+  max-width: 1000px;
+  font-size: 17px;
+  margin: auto;
 }
 
-.experience {
-  margin-bottom: 30px;
+@media (max-width: 768) {
+  /*removes the parallax effect in mobile devices*/
+  .parallax {
+    background-attachment: scroll;
+    height: 400px;
+  }
+  .parallax h2 {
+    font-size: 22px;
+  }
+  .content {
+    padding: 30px;
+  }
 }
